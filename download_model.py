@@ -8,8 +8,8 @@ MODEL_DIR = "models"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # ダウンロード対象
-REPO_ID = "TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
-FILENAME = "mistral-7b-instruct-v0.1.Q4_K_M.gguf"
+REPO_ID = "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF"
+FILENAME = "tinyllama-1.1b-chat-v1.0.Q4_0.gguf"
 
 # ダウンロード実行
 print(f"📥 Downloading {FILENAME} from {REPO_ID}...")

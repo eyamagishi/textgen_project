@@ -1,6 +1,6 @@
 # config.yaml
 
-model_path: models/mistral-7b-instruct-v0.1.Q4_K_M.gguf
+model_path: models/tinyllama-1.1b-chat-v1.0.Q4_0.gguf
 context_length: 512        # プロンプト＋生成の最大トークン数（短めでメモリ節約）
 threads: 2                 # CPUスレッド数（環境に応じて調整）
 max_tokens: 32             # 生成トークン数（短くして高速化）
