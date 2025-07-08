@@ -27,6 +27,4 @@ output = llm(
     top_k=config["top_k"]
 )
 print("✅ 応答生成完了")
-print(output["choices"][0]["text"])
-
 print("📝 生成結果:\n", output["choices"][0]["text"])
