@@ -1,0 +1,8 @@
+# config.yaml
+
+model_path: models/mistral-7b-instruct-v0.1.Q4_K_M.gguf
+context_length: 512        # プロンプト＋生成の最大トークン数（短めでメモリ節約）
+threads: 2                 # CPUスレッド数（環境に応じて調整）
+max_tokens: 32             # 生成トークン数（短くして高速化）
+temperature: 0.7           # 創造性の度合い（0.7は自然な生成に適した値）
+top_k: 40                  # トークン選択の多様性（40はやや広め）

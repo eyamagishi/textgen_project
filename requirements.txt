@@ -1,0 +1,4 @@
+llama-cpp-python
+pyyaml
+huggingface_hub
+rich

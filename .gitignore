@@ -1,0 +1,40 @@
+# .gitignore
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 仮想環境
+venv/
+.env/
+.envrc
+*.env
+
+# モデルファイル（大容量）
+models/
+*.gguf
+*.bin
+*.pth
+*.pt
+
+# Jupyter Notebookのチェックポイント
+.ipynb_checkpoints/
+
+# VSCode設定（任意）
+.vscode/
+
+# 出力ファイル・ログ
+*.log
+*.out
+*.tmp
+*.bak
+
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+
+# YAMLバックアップや一時ファイル
+*.yaml~
+*.yml~
