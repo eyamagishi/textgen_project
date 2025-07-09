@@ -18,7 +18,7 @@ from rich.progress import track
 console = Console()
 CONFIG_PATH = Path("config.yaml")
 PROMPT_PATH = Path("prompts/story.txt")
-OUTPUT_PATH = Path("output.txt")
+OUTPUT_PATH = Path("outputs/output.txt")
 
 def load_config(path: Path) -> dict:
     """
@@ -133,12 +133,14 @@ def generate_response(llm: Llama, prompt: str, config: dict) -> str:
 def save_output(text: str, path: Path) -> None:
     """
     生成されたテキストをファイルに保存します。
+    必要に応じて出力先ディレクトリを自動作成します。
 
     引数:
         text (str): 保存するテキスト
         path (Path): 保存先のファイルパス
     """
     try:
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
         console.print(f"💾 出力を保存しました: [green]{path}[/green]")
     except Exception as e:
