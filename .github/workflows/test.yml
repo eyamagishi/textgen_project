@@ -28,10 +28,9 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          python -m pytest --cov --cov-report=term --cov-report=html
+          python -m pytest --cov --cov-report=term --cov-report=html --cov-report=xml
         # ✅ カバレッジ付きでテストを実行
-        # - `--cov` は .coveragerc の設定を自動で読み込む
-        # - `--cov-report=html` により htmlcov/ が生成される
+        # - `--cov-report=xml` により coverage.xml を生成（Codecov 用）
 
       - name: Upload HTML coverage report
         uses: actions/upload-artifact@v4
@@ -40,3 +39,11 @@ jobs:
           path: htmlcov/
         # ✅ カバレッジレポートをアーティファクトとしてアップロード
         # - GitHub Actions の UI からダウンロード可能
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.xml
+          fail_ci_if_error: true
+        # ✅ Codecov に coverage.xml をアップロード
+        # - パブリックリポジトリなら token は不要
