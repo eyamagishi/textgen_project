@@ -1,6 +1,6 @@
 # 🧠 Local Text Generation with GGUF Models
 
-![Coverage](https://codecov.io/gh/eyamagishi/textgen_project/branch/main/graph/badge.svg)
+[![codecov](https://codecov.io/github/eyamagishi/textgen_project/graph/badge.svg)](https://codecov.io/github/eyamagishi/textgen_project)
 ![CI](https://github.com/eyamagishi/textgen_project/actions/workflows/test.yml/badge.svg)
 ![Lint](https://github.com/eyamagishi/textgen_project/actions/workflows/lint.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
