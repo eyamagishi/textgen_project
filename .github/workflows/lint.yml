@@ -26,6 +26,6 @@ jobs:
         # ✅ ruff をインストール（超高速な Python 静的解析ツール）
 
       - name: Run ruff
-        run: ruff core/ tests/
+        run: ruff check core/ tests/ --output-format=github
         # ✅ core/ と tests/ ディレクトリを対象に lint を実行
-        # - エラーがあるとジョブが失敗し、PR にフィードバックされる
+        # - GitHub UI にエラーをインライン表示するための出力形式を指定
