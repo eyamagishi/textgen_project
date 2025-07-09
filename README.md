@@ -87,3 +87,22 @@ top_k: 40
 
 このプロジェクトは MIT ライセンスのもとで公開されています。  
 詳細は [LICENSE](./LICENSE) ファイルをご確認ください。
+
+## 🤝 貢献
+
+このプロジェクトへの貢献を歓迎します！
+
+### 🔍 Issue を確認する
+
+- バグ報告や機能提案を行う前に、[Issues](https://github.com/eyamagishi/textgen-project/issues) を確認してください。
+- 既に同様のIssueが存在する場合は、そのスレッドにコメントを追加してください。
+- 該当するIssueがない場合は、新しいIssueを作成してから作業を始めてください。
+
+### 🛠️ 貢献の流れ
+
+1. リポジトリをフォーク
+2. 新しいブランチを作成（例：`feature/add-cli-support`）
+3. コードを変更・テスト
+4. Pull Request を作成（テンプレートに従って記述）
+
+詳しくは [CONTRIBUTING.md](./CONTRIBUTING.md) をご覧ください。
