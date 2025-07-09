@@ -1,8 +1,14 @@
 # core/config_loader.py
 
+# === 標準ライブラリ ===
 from pathlib import Path
+
+# === サードパーティライブラリ ===
 import yaml
 from rich.console import Console
+
+# === ローカルモジュール ===
+# （このファイルではローカルモジュールは使用していません）
 
 console = Console()
 

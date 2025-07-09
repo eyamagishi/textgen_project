@@ -9,6 +9,7 @@ from datetime import datetime
 from rich.console import Console
 
 # === ローカルモジュール ===
+# （このファイルではローカルモジュールは使用していません）
 
 console = Console()
 

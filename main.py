@@ -11,7 +11,7 @@ from rich.table import Table
 from core.config_loader import load_config
 from core.prompt_loader import load_prompt
 from core.model_runner import initialize_model, generate_response
-from core.output_writer import save_output, save_log  # ← save_log を使う場合
+from core.output_writer import save_output, save_log
 
 console = Console()
 

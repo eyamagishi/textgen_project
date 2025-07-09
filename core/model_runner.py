@@ -1,9 +1,15 @@
 # core/model_runner.py
 
+# === 標準ライブラリ ===
 import time
+
+# === サードパーティライブラリ ===
 from rich.console import Console
 from rich.progress import track
 from llama_cpp import Llama
+
+# === ローカルモジュール ===
+# （このファイルではローカルモジュールは使用していません）
 
 console = Console()
 

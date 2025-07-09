@@ -1,7 +1,13 @@
 # core/prompt_loader.py
 
+# === 標準ライブラリ ===
 from pathlib import Path
+
+# === サードパーティライブラリ ===
 from rich.console import Console
+
+# === ローカルモジュール ===
+# （このファイルではローカルモジュールは使用していません）
 
 console = Console()
 
