@@ -1,9 +1,15 @@
 # tests/test_output_writer.py
 
-from core.output_writer import save_output, save_log
+# === 標準ライブラリ ===
+import json
 from pathlib import Path
 from unittest.mock import patch
-import json
+
+# === サードパーティライブラリ ===
+# （このファイルではサードパーティライブラリは使用していません）
+
+# === ローカルモジュール ===
+from core.output_writer import save_output, save_log
 
 def test_save_output_creates_file(tmp_path):
     """
