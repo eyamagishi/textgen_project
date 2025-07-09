@@ -106,3 +106,8 @@ top_k: 40
 4. Pull Request を作成（テンプレートに従って記述）
 
 詳しくは [CONTRIBUTING.md](./CONTRIBUTING.md) をご覧ください。
+
+## 🙏 謝辞
+
+このプロジェクトは、Microsoft Copilot の支援を受けて設計・実装されています。  
+設計のアドバイス、コードの生成、ドキュメントの整備などにおいて、Copilot の提案を積極的に活用しています。
