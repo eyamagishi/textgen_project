@@ -1,7 +1,12 @@
 # tests/test_prompt_loader.py
 
-import pytest
+# === 標準ライブラリ ===
 from pathlib import Path
+
+# === サードパーティライブラリ ===
+import pytest
+
+# === ローカルモジュール ===
 from core.prompt_loader import load_prompt
 
 def test_load_prompt_returns_str(tmp_path):

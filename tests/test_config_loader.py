@@ -1,7 +1,12 @@
 # tests/test_config_loader.py
 
-import pytest
+# === 標準ライブラリ ===
 from pathlib import Path
+
+# === サードパーティライブラリ ===
+import pytest
+
+# === ローカルモジュール ===
 from core.config_loader import load_config
 
 def test_load_config_returns_dict(tmp_path):

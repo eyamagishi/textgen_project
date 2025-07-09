@@ -1,7 +1,10 @@
 # 🧠 Local Text Generation with GGUF Models
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![CI](https://github.com/eyamagishi/textgen_project/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/github/eyamagishi/textgen_project/graph/badge.svg)](https://codecov.io/github/eyamagishi/textgen_project)
+![Lint](https://github.com/eyamagishi/textgen_project/actions/workflows/lint.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![LLM](https://img.shields.io/badge/LLM-GGUF%20%2F%20llama.cpp-orange)
 
