@@ -1,34 +1,42 @@
 # .github/workflows/test.yml
 
-name: Run Tests with Coverage
+name: Run Tests with Coverage  # ✅ ワークフロー名。GitHub Actions の UI に表示される
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]       # ✅ master ブランチへの push をトリガーに
   pull_request:
-    branches: [ main ]
+    branches: [ master ]       # ✅ master ブランチへの PR もトリガーに（CIチェック用途）
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest     # ✅ Ubuntu 環境でジョブを実行（Python 開発に最適）
 
     steps:
       - uses: actions/checkout@v4
+        # ✅ リポジトリのコードをチェックアウト（必須）
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+        # ✅ Python 3.10 をセットアップ（ローカルと合わせると◎）
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+        # ✅ 依存パッケージをインストール（pytest, pytest-cov など）
 
       - name: Run tests with coverage
         run: |
           python -m pytest --cov --cov-report=term --cov-report=html
+        # ✅ カバレッジ付きでテストを実行
+        # - `--cov` は .coveragerc の設定を自動で読み込む
+        # - `--cov-report=html` により htmlcov/ が生成される
 
       - name: Upload HTML coverage report
         uses: actions/upload-artifact@v4
         with:
           name: htmlcov
           path: htmlcov/
+        # ✅ カバレッジレポートをアーティファクトとしてアップロード
+        # - GitHub Actions の UI からダウンロード可能
