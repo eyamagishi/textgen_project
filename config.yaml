@@ -1,8 +1,19 @@
 # config.yaml
 
+# 📦 モデル設定
 model_path: models/tinyllama-1.1b-chat-v1.0.Q4_0.gguf
-context_length: 512        # プロンプト＋生成の最大トークン数（短めでメモリ節約）
-threads: 2                 # CPUスレッド数（環境に応じて調整）
-max_tokens: 32             # 生成トークン数（短くして高速化）
-temperature: 0.7           # 創造性の度合い（0.7は自然な生成に適した値）
-top_k: 40                  # トークン選択の多様性（40はやや広め）
+context_length: 512        # プロンプト＋生成の最大トークン数
+threads: 2                 # 使用するCPUスレッド数
+
+# 🧠 生成パラメータ
+max_tokens: 512            # 生成トークン数
+temperature: 0.7           # 創造性の度合い（0.7〜1.0）
+top_k: 20                  # トークン選択の多様性（小さいほど保守的）
+top_p: 0.95                # nucleus sampling（任意）
+repeat_penalty: 1.5        # 同じ語句の繰り返しを抑制
+stop: []                   # 出力停止トークン（任意）
+
+# 🧪 実行オプション
+stream: false              # トークンをリアルタイムで出力するか
+seed: null                 # 乱数シード（再現性のため）
+verbose: true              # 詳細ログ出力

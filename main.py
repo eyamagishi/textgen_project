@@ -11,13 +11,14 @@ from rich.table import Table
 from core.config_loader import load_config
 from core.prompt_loader import load_prompt
 from core.model_runner import initialize_model, generate_response
-from core.output_writer import save_output
+from core.output_writer import save_output, save_log
 
 console = Console()
 
 CONFIG_PATH = Path("config.yaml")
 PROMPT_PATH = Path("prompts/story.txt")
 OUTPUT_PATH = Path("outputs/output.txt")
+LOG_DIR = Path("logs")
 
 def display_config(config: dict) -> None:
     """
@@ -48,6 +49,7 @@ def main():
     console.print(response, style="bold white")
 
     save_output(response, OUTPUT_PATH)
+    save_log(prompt, config, response, LOG_DIR)
 
 if __name__ == "__main__":
     main()

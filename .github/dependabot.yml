@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # requirements.txt の場所（ルートにある場合）
+    schedule:
+      interval: "weekly"  # daily / weekly / monthly から選択
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    commit-message:
+      prefix: "deps"
+    ignore:
+      - dependency-name: "torch"
+        versions: ["2.x"]
+    allow:
+      - dependency-type: "direct"

@@ -1,0 +1,31 @@
+# .github/workflows/lint.yml
+
+name: Lint with ruff  # ✅ ワークフロー名。GitHub Actions の UI に表示される
+
+on:
+  push:
+    branches: [ master ]       # ✅ master ブランチへの push をトリガーに
+  pull_request:
+    branches: [ master ]       # ✅ master ブランチへの PR 作成・更新時にも実行（品質チェックに最適）
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest     # ✅ Ubuntu 環境でジョブを実行（Python 開発に最適）
+
+    steps:
+      - uses: actions/checkout@v4
+        # ✅ リポジトリのコードをチェックアウト（必須）
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+        # ✅ Python 3.10 をセットアップ（ローカルと合わせると◎）
+
+      - name: Install ruff
+        run: pip install ruff
+        # ✅ ruff をインストール（超高速な Python 静的解析ツール）
+
+      - name: Run ruff
+        run: ruff check core/ tests/ --output-format=github
+        # ✅ core/ と tests/ ディレクトリを対象に lint を実行
+        # - GitHub UI にエラーをインライン表示するための出力形式を指定
