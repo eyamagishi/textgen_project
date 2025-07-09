@@ -57,7 +57,7 @@ def test_initialize_model_calls_llama_with_expected_args():
     }
 
     with patch("core.model_runner.Llama") as MockLlama:
-        model = model_runner.initialize_model(config)
+        model_runner.initialize_model(config)
         MockLlama.assert_called_once_with(
             model_path="models/mock.gguf",
             n_ctx=256,
