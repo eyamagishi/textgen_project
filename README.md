@@ -1,5 +1,10 @@
 # 🧠 Local Text Generation with GGUF Models
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![LLM](https://img.shields.io/badge/LLM-GGUF%20%2F%20llama.cpp-orange)
+
 このプロジェクトは、`llama.cpp` ベースのローカルLLM（例：TinyLlama, Mistral）を使用して、プロンプトに対する自然なテキスト生成を行うPythonアプリケーションです。
 
 ## 🚀 特徴
