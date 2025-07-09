@@ -41,3 +41,6 @@ Thumbs.db
 
 # 出力ファイル
 outputs/
+
+# 出力ファイル
+logs/
