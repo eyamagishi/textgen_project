@@ -26,6 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: ✅ テストを実行（python3 -m pytest）
+      - name: ✅ テストを実行（python3 -m pytest --cov）
         run: |
-          python3 -m pytest || echo "⚠️ テストが失敗しましたがCIは継続します"
+          python3 -m pytest --cov || echo "⚠️ テストが失敗しましたがCIは継続します"

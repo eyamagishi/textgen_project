@@ -44,3 +44,8 @@ outputs/
 
 # 出力ファイル
 logs/
+
+# Pytestのバレッジ測定機能
+.coverage
+htmlcov/
+coverage.xml

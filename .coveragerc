@@ -1,0 +1,24 @@
+[run]
+branch = True
+source = core
+omit =
+    */tests/*
+    */__init__.py
+
+[report]
+show_missing = True
+skip_covered = True
+fail_under = 85
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    raise NotImplementedError
+
+[html]
+directory = htmlcov
+title = Coverage Report
+skip_covered = True
+
+[xml]
+output = coverage.xml
+skip_covered = True
