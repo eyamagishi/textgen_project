@@ -1,13 +1,18 @@
 # main.py
 
+# === 標準ライブラリ ===
+import sys
+import time
+from pathlib import Path
+
+# === サードパーティライブラリ ===
 import yaml
 from llama_cpp import Llama
 from rich.console import Console
 from rich.table import Table
 from rich.progress import track
-from pathlib import Path
-import time
-import sys
+
+# ===  ローカルモジュール ===
 
 # === 初期化 ===
 console = Console()
