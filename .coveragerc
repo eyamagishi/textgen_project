@@ -17,8 +17,3 @@ exclude_lines =
 [html]
 directory = htmlcov
 title = Coverage Report
-skip_covered = True
-
-[xml]
-output = coverage.xml
-skip_covered = True
