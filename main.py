@@ -1,32 +1,53 @@
 # main.py
 
-import yaml
-from llama_cpp import Llama
-from utils.tokenizer import load_prompt
+# === 標準ライブラリ ===
+from pathlib import Path
 
-# 設定読み込み
-with open("config.yaml", "r", encoding="utf-8") as f:
-    config = yaml.safe_load(f)
+# === サードパーティライブラリ ===
+from rich.console import Console
+from rich.table import Table
 
-# モデル初期化
-llm = Llama(
-    model_path=config["model_path"],
-    n_ctx=config["context_length"],
-    n_threads=config["threads"]
-)
+# === ローカルモジュール ===
+from core.config_loader import load_config
+from core.prompt_loader import load_prompt
+from core.model_runner import initialize_model, generate_response
+from core.output_writer import save_output
 
-# プロンプト読み込み
-prompt = load_prompt("prompts/story.txt")
+console = Console()
 
-# テキスト生成
-print("🧠 モデル読み込み完了。プロンプトを送信中...")
-output = llm(
-    prompt,
-    max_tokens=config["max_tokens"],
-    temperature=config["temperature"],
-    top_k=config["top_k"]
-)
-print("✅ 応答生成完了")
-print(output["choices"][0]["text"])
+CONFIG_PATH = Path("config.yaml")
+PROMPT_PATH = Path("prompts/story.txt")
+OUTPUT_PATH = Path("outputs/output.txt")
 
-print("📝 生成結果:\n", output["choices"][0]["text"])
+def display_config(config: dict) -> None:
+    """
+    設定内容をテーブル形式で表示します。
+    """
+    table = Table(title="🛠️ モデル設定")
+    table.add_column("パラメータ", style="cyan", no_wrap=True)
+    table.add_column("値", style="magenta")
+    for key, value in config.items():
+        table.add_row(str(key), str(value))
+    console.print(table)
+
+def main():
+    """
+    テキスト生成パイプラインのメイン処理。
+    """
+    config = load_config(CONFIG_PATH)
+    display_config(config)
+
+    prompt = load_prompt(PROMPT_PATH)
+    console.rule("[bold cyan]📝 プロンプト")
+    console.print(prompt, style="white on black")
+
+    llm = initialize_model(config)
+    response = generate_response(llm, prompt, config)
+
+    console.rule("[bold green]📤 生成結果")
+    console.print(response, style="bold white")
+
+    save_output(response, OUTPUT_PATH)
+
+if __name__ == "__main__":
+    main()

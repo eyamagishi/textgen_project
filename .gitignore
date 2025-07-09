@@ -38,3 +38,6 @@ Thumbs.db
 # YAMLバックアップや一時ファイル
 *.yaml~
 *.yml~
+
+# 出力ファイル
+outputs/
